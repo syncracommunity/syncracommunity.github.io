@@ -3,23 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO & Google Arama Motoru Ayarları -->
+ 
   <title>Syncra Tools - Steam Library Gaming Platform</title>
-  <meta name="description" content="Syncra Tools ile Steam oyunlarınızı, DLC paketlerinizi ve dijital kütüphanenizi kolayca senkronize edin ve pratik araçlara tek tıkla ulaşın.">
-  <meta name="keywords" content="Syncra Tools, Syncra, syncra tool, steam dlc ekleme, oyun senkronizasyon, dijital araçlar">
+  <meta name="description" content="Syncra Tools ile Steam oyunlarınızı, DLC paketlerinizi ve dijital kütüphanenizi kolayca senkronize edin. Türkçe yama desteği ile birlikte.">
+  <meta name="keywords" content="Syncra Tools, Syncra, syncra tool, steam dlc ekleme, türkçe yama, oyun senkronizasyon">
   <meta name="robots" content="index, follow">
-  
-  <!-- Tarayıcı Sekme Logosu (Favicon) -->
+ 
   <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1537534177233084517/1537769987224117278/syncralogo.png?ex=6a8c1ce7&is=6a8acb67&hm=92ed627741e90ab6b764fe2c85568946f9cc87edd84f11af2389637e9d387a85">
   <link rel="apple-touch-icon" href="https://cdn.discordapp.com/attachments/1537534177233084517/1537769987224117278/syncralogo.png?ex=6a8c1ce7&is=6a8acb67&hm=92ed627741e90ab6b764fe2c85568946f9cc87edd84f11af2389637e9d387a85">
-
-  <!-- Sosyal Medya & Discord Önizleme Logo (Open Graph) -->
   <meta property="og:title" content="Syncra Tools">
-  <meta property="og:description" content="Oyunlar ve Tüm DLC'ler tek tıkla kütüphanende! Modern ve pratik dijital araçlar platformu.">
+  <meta property="og:description" content="Oyunlar, DLC'ler ve Türkçe yamalar tek tıkla kütüphanende!">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://cdn.discordapp.com/attachments/1537534177233084517/1537769987224117278/syncralogo.png?ex=6a8c1ce7&is=6a8acb67&hm=92ed627741e90ab6b764fe2c85568946f9cc87edd84f11af2389637e9d387a85">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
   <style>
@@ -31,26 +26,19 @@
       --accent: #66c0f4;
       --accent-glow: rgba(102, 192, 244, 0.25);
       --accent-green: #2ea043;
+      --accent-purple: #a78bfa;
       --text-bright: #ffffff;
       --text-main: #a3b3c2;
       --text-muted: #65778a;
       --border-card: rgba(102, 192, 244, 0.15);
       --border-hover: rgba(102, 192, 244, 0.4);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
       overflow-x: hidden;
-      background-image: 
+      background-image:
         radial-gradient(ellipse at 50% 0%, rgba(42, 71, 94, 0.3) 0%, transparent 70%),
         radial-gradient(circle at 85% 30%, rgba(102, 192, 244, 0.08) 0%, transparent 40%),
         linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
@@ -58,8 +46,6 @@
       background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
       background-attachment: fixed;
     }
-
-    /* Duyuru Bandı */
     .announce-banner {
       background: linear-gradient(90deg, #1b2838 0%, #2a475e 100%);
       border-bottom: 1px solid var(--border-hover);
@@ -74,7 +60,6 @@
       position: relative;
       z-index: 101;
     }
-
     .announce-banner span {
       background: var(--accent-green);
       color: #fff;
@@ -83,468 +68,319 @@
       font-weight: 700;
       font-size: 0.75rem;
     }
-
-    .banner-close {
-      position: absolute;
-      right: 1.5rem;
-      cursor: pointer;
-      color: var(--text-muted);
-    }
-
+    .banner-close { position: absolute; right: 1.5rem; cursor: pointer; color: var(--text-muted); }
     .banner-close:hover { color: var(--text-bright); }
-
-    /* Navigasyon */
     header {
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 100;
+      position: sticky; top: 0; width: 100%; z-index: 100;
       backdrop-filter: blur(25px);
       background: rgba(9, 12, 16, 0.85);
       border-bottom: 1px solid rgba(102, 192, 244, 0.12);
     }
-
     .nav-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      max-width: 1240px; margin: 0 auto; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
     }
-
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-bright);
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 800;
-      font-size: 1.3rem;
+      display: flex; align-items: center; gap: 12px; text-decoration: none;
+      color: var(--text-bright); font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.3rem;
     }
-
     .brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      border: 1px solid var(--border-hover);
-      box-shadow: 0 0 15px var(--accent-glow);
+      width: 38px; height: 38px; border-radius: 10px;
+      border: 1px solid var(--border-hover); box-shadow: 0 0 15px var(--accent-glow);
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
+      color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.3s ease;
     }
-
     .nav-links a:hover { color: var(--accent); }
-
     .nav-actions { display: flex; align-items: center; gap: 1rem; }
-
     .btn-action {
-      padding: 0.65rem 1.3rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
+      padding: 0.65rem 1.3rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.88rem;
+      display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;
     }
-
     .btn-discord {
-      background: rgba(88, 101, 242, 0.12);
-      border: 1px solid rgba(88, 101, 242, 0.3);
-      color: #8ea1ff;
+      background: rgba(88, 101, 242, 0.12); border: 1px solid rgba(88, 101, 242, 0.3); color: #8ea1ff;
     }
-
-    .btn-discord:hover {
-      background: rgba(88, 101, 242, 0.25);
-      color: #fff;
-    }
-
+    .btn-discord:hover { background: rgba(88, 101, 242, 0.25); color: #fff; }
     .btn-download {
       background: linear-gradient(135deg, #1a9fff 0%, #0077ff 100%);
-      color: #fff;
-      box-shadow: 0 4px 25px rgba(0, 119, 255, 0.4);
+      color: #fff; box-shadow: 0 4px 25px rgba(0, 119, 255, 0.4);
     }
-
     .btn-download:hover { transform: translateY(-2px); }
-
-    /* Hero Section */
     .hero {
       padding: 6rem 2rem 4rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
     }
-
     .version-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(17, 22, 34, 0.9);
-      border: 1px solid var(--border-hover);
-      padding: 0.45rem 1rem;
-      border-radius: 50px;
-      margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(17, 22, 34, 0.9); border: 1px solid var(--border-hover);
+      padding: 0.45rem 1rem; border-radius: 50px; margin-bottom: 2rem;
       box-shadow: 0 0 25px var(--accent-glow);
     }
-
     .live-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--accent-green);
-      border-radius: 50%;
+      width: 8px; height: 8px; background-color: var(--accent-green); border-radius: 50%;
       box-shadow: 0 0 10px var(--accent-green);
     }
-
     .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 4rem;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      color: var(--text-bright);
+      font-family: 'Space Grotesk', sans-serif; font-size: 4rem; font-weight: 800;
+      line-height: 1.1; margin-bottom: 1.5rem; color: var(--text-bright);
     }
-
     .hero h1 span {
       background: linear-gradient(180deg, #ffffff 30%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-
     .hero p {
-      color: var(--text-main);
-      max-width: 650px;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 3rem;
+      color: var(--text-main); max-width: 650px; font-size: 1.1rem; line-height: 1.7; margin-bottom: 2rem;
     }
-
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 1rem;
     }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 3.5rem;
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(167, 139, 250, 0.12); border: 1px solid rgba(167, 139, 250, 0.35);
+      color: #c4b5fd; padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
     }
+    .hero-badge i { color: var(--accent-purple); }
+    .hero-badge.blue {
+      background: rgba(102, 192, 244, 0.1); border-color: rgba(102, 192, 244, 0.3); color: var(--accent);
+    }
+    .hero-badge.blue i { color: var(--accent); }
+    .hero-badge.green {
+      background: rgba(46, 160, 67, 0.12); border-color: rgba(46, 160, 67, 0.35); color: #6ee7b7;
+    }
+    .hero-badge.green i { color: var(--accent-green); }
 
+    .container { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem; }
+    .section-title { text-align: center; margin-bottom: 3.5rem; }
     .section-title h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: var(--text-bright);
-      margin-bottom: 0.8rem;
+      font-family: 'Space Grotesk', sans-serif; font-size: 2.4rem; font-weight: 800;
+      color: var(--text-bright); margin-bottom: 0.8rem;
     }
+    .section-title p { color: var(--text-muted); font-size: 1rem; }
 
-    /* Adımlar */
-    .steps-grid {
+    /* Türkçe Yama Feature Highlight */
+    .feature-highlight {
+      background: linear-gradient(135deg, rgba(167, 139, 250, 0.08) 0%, rgba(102, 192, 244, 0.06) 100%);
+      border: 1px solid rgba(167, 139, 250, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2.5rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
     }
-
-    .step-card {
+    .feature-highlight::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .feature-highlight-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(167, 139, 250, 0.2); color: #c4b5fd;
+      padding: 5px 12px; border-radius: 50px; font-size: 0.75rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem;
+    }
+    .feature-highlight h3 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 800;
+      color: var(--text-bright); margin-bottom: 0.8rem; line-height: 1.25;
+    }
+    .feature-highlight p {
+      color: var(--text-main); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .feature-points {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .feature-point {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.92rem; color: var(--text-main); line-height: 1.5;
+    }
+    .feature-point i {
+      color: var(--accent-purple); margin-top: 3px; font-size: 0.95rem; flex-shrink: 0;
+    }
+    .feature-visual {
       background: var(--bg-surface);
       border: 1px solid var(--border-card);
       border-radius: 16px;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .step-num {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.05);
-    }
-
-    .step-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: rgba(102, 192, 244, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .step-card h3 {
-      color: var(--text-bright);
-      font-size: 1.15rem;
-      margin-bottom: 0.6rem;
-    }
-
-    /* 3D Carousel Slider */
-    .slider-wrapper {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 12px;
     }
-
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      height: 480px;
-      perspective: 1000px;
+    .mock-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 14px 16px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      gap: 14px;
+    }
+    .mock-card img {
+      width: 64px; height: 34px; object-fit: cover; border-radius: 6px; background: #0b0e14;
+    }
+    .mock-card-info { flex: 1; min-width: 0; }
+    .mock-card-info strong {
+      display: block; color: #fff; font-size: 0.9rem; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .mock-card-info span { font-size: 0.75rem; color: var(--text-muted); }
+    .mock-btn {
+      background: linear-gradient(135deg, #7c3aed, #a78bfa);
+      color: #fff; border: none; border-radius: 8px;
+      padding: 8px 14px; font-size: 0.78rem; font-weight: 700;
+      display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+    }
+    .mock-btn-remove {
+      background: rgba(239, 68, 68, 0.15); color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.3);
     }
 
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+    }
+    .step-card {
+      background: var(--bg-surface); border: 1px solid var(--border-card);
+      border-radius: 16px; padding: 2rem; position: relative;
+    }
+    .step-num {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 800;
+      color: rgba(255, 255, 255, 0.05);
+    }
+    .step-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      background: rgba(102, 192, 244, 0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1.3rem; margin-bottom: 1.5rem;
+    }
+    .step-card h3 { color: var(--text-bright); font-size: 1.15rem; margin-bottom: 0.6rem; }
+
+    .slider-wrapper {
+      position: relative; max-width: 900px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .carousel-container {
+      position: relative; width: 100%; height: 480px; perspective: 1000px;
+      display: flex; justify-content: center; align-items: center;
+    }
     .slide {
-      position: absolute;
-      width: 75%;
-      height: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border-hover);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-      opacity: 0;
-      cursor: pointer;
+      position: absolute; width: 75%; height: 100%; border-radius: 16px; overflow: hidden;
+      border: 1px solid var(--border-hover); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); opacity: 0; cursor: pointer;
       background: var(--bg-surface);
     }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background-color: #0b0e14;
-    }
-
+    .slide img { width: 100%; height: 100%; object-fit: contain; background-color: #0b0e14; }
     .slide.active {
-      transform: translateX(0) scale(1);
-      z-index: 10;
-      opacity: 1;
+      transform: translateX(0) scale(1); z-index: 10; opacity: 1;
       border-color: var(--accent);
       box-shadow: 0 0 30px var(--accent-glow), 0 20px 50px rgba(0,0,0,0.9);
     }
-
-    .slide.prev {
-      transform: translateX(-35%) scale(0.82) rotateY(15deg);
-      z-index: 5;
-      opacity: 0.45;
-      filter: brightness(0.6);
-    }
-
-    .slide.next {
-      transform: translateX(35%) scale(0.82) rotateY(-15deg);
-      z-index: 5;
-      opacity: 0.45;
-      filter: brightness(0.6);
-    }
-
-    .slider-controls {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
+    .slide.prev { transform: translateX(-35%) scale(0.82) rotateY(15deg); z-index: 5; opacity: 0.45; filter: brightness(0.6); }
+    .slide.next { transform: translateX(35%) scale(0.82) rotateY(-15deg); z-index: 5; opacity: 0.45; filter: brightness(0.6); }
+    .slider-controls { display: flex; align-items: center; gap: 1.5rem; margin-top: 2rem; }
     .slider-btn {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-card);
-      color: var(--text-bright);
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      background: var(--bg-surface); border: 1px solid var(--border-card); color: var(--text-bright);
+      width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all 0.3s ease;
     }
-
-    .slider-btn:hover {
-      border-color: var(--accent);
-      background: rgba(102, 192, 244, 0.15);
-      color: var(--accent);
-    }
-
-    .dots-container {
-      display: flex;
-      gap: 8px;
-    }
-
+    .slider-btn:hover { border-color: var(--accent); background: rgba(102, 192, 244, 0.15); color: var(--accent); }
+    .dots-container { display: flex; gap: 8px; }
     .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.3s ease;
+      width: 10px; height: 10px; border-radius: 50%; background: var(--text-muted);
+      cursor: pointer; transition: all 0.3s ease;
     }
+    .dot.active { background: var(--accent); width: 26px; border-radius: 10px; box-shadow: 0 0 10px var(--accent-glow); }
 
-    .dot.active {
-      background: var(--accent);
-      width: 26px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px var(--accent-glow);
-    }
-
-    /* Changelog Custom Structure */
-    .changelog-box {
+    /* Changelog - temizlenmiş */
+    .changelog-stack { display: flex; flex-direction: column; gap: 1.25rem; }
+    .changelog-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-card);
       border-radius: 16px;
-      padding: 2.2rem;
+      overflow: hidden;
+    }
+    .changelog-card-header {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      padding: 1.4rem 1.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.02);
+    }
+    .changelog-card-header h3 {
+      color: #fff; font-size: 1.15rem; font-weight: 800;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .changelog-card-header h3 i { color: var(--accent); }
+    .changelog-meta {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 0.72rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .tag-stable { background: rgba(46, 160, 67, 0.15); color: #6ee7b7; border: 1px solid rgba(46, 160, 67, 0.3); }
+    .tag-new { background: rgba(167, 139, 250, 0.15); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+    .changelog-date { font-size: 0.82rem; color: var(--text-muted); }
+    .changelog-body { padding: 1.5rem 1.8rem 1.8rem; }
+    .changelog-group { margin-bottom: 1.4rem; }
+    .changelog-group:last-child { margin-bottom: 0; }
+    .changelog-group-title {
+      font-size: 0.88rem; font-weight: 700; color: var(--text-bright);
+      margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px;
+    }
+    .changelog-group-title.purple { color: #c4b5fd; }
+    .changelog-group-title.blue { color: var(--accent); }
+    .changelog-group-title.green { color: #6ee7b7; }
+    .changelog-items {
+      list-style: none; display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .changelog-items li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.92rem; line-height: 1.55; color: var(--text-main);
+    }
+    .changelog-items li::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); margin-top: 7px; flex-shrink: 0;
+      box-shadow: 0 0 6px var(--accent-glow);
     }
 
-    .changelog-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 1rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .changelog-section-title {
-      color: var(--text-bright);
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-top: 1.2rem;
-      margin-bottom: 0.8rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .changelog-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .changelog-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.93rem;
-      line-height: 1.6;
-      color: var(--text-main);
-    }
-
-    .changelog-list li i {
-      color: var(--accent);
-      margin-top: 4px;
-      font-size: 0.8rem;
-    }
-
-    .changelog-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 1.2rem;
-      margin-top: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
-
-    /* Gereksinimler */
     .req-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;
     }
-
     .req-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-card);
-      border-radius: 12px;
-      padding: 1.2rem;
-      text-align: center;
+      background: var(--bg-surface); border: 1px solid var(--border-card);
+      border-radius: 12px; padding: 1.2rem; text-align: center;
     }
-
-    .req-card i {
-      font-size: 1.8rem;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-    }
-
+    .req-card i { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.8rem; }
     .req-card h5 { color: var(--text-bright); font-size: 0.95rem; margin-bottom: 0.3rem; }
     .req-card p { font-size: 0.85rem; color: var(--text-muted); }
 
-    /* S.S.S. */
     .faq-container { display: flex; flex-direction: column; gap: 1rem; }
-    
     .faq-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-card);
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.3s ease;
+      background: var(--bg-surface); border: 1px solid var(--border-card);
+      border-radius: 12px; overflow: hidden; transition: border-color 0.3s ease;
     }
-
     .faq-box:hover { border-color: var(--border-hover); }
-
     .faq-trigger {
-      padding: 1.3rem 1.6rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      font-weight: 700;
-      color: var(--text-bright);
-      font-size: 1rem;
+      padding: 1.3rem 1.6rem; display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; font-weight: 700; color: var(--text-bright); font-size: 1rem;
     }
-
-    .faq-trigger i {
-      color: var(--accent);
-      transition: transform 0.3s ease;
-    }
-
+    .faq-trigger i { color: var(--accent); transition: transform 0.3s ease; }
     .faq-content {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.6rem;
-      color: var(--text-main);
-      font-size: 0.93rem;
-      line-height: 1.75;
-      transition: all 0.35s ease;
+      max-height: 0; overflow: hidden; padding: 0 1.6rem;
+      color: var(--text-main); font-size: 0.93rem; line-height: 1.75; transition: all 0.35s ease;
     }
-
-    .faq-box.active .faq-content {
-      max-height: 400px;
-      padding-bottom: 1.5rem;
-    }
-
+    .faq-box.active .faq-content { max-height: 400px; padding-bottom: 1.5rem; }
     .faq-box.active .faq-trigger i { transform: rotate(180deg); }
 
     footer {
       border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 2.5rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      padding: 2.5rem; text-align: center; font-size: 0.85rem; color: var(--text-muted);
     }
 
     @media (max-width: 850px) {
@@ -553,18 +389,16 @@
       .carousel-container { height: 280px; }
       .slide.prev { transform: translateX(-20%) scale(0.85); }
       .slide.next { transform: translateX(20%) scale(0.85); }
+      .feature-highlight { grid-template-columns: 1fr; padding: 1.75rem; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Duyuru Bandı -->
   <div class="announce-banner" id="banner">
-    <span>YENİ</span> Syncra Tools v1.0.0 kararlı sürümü yayınlandı!
+    <span>YENİ</span> Türkçe yama desteği eklendi — kütüphaneden tek tıkla indir!
     <i class="fa-solid fa-xmark banner-close" onclick="document.getElementById('banner').style.display='none'"></i>
   </div>
 
-  <!-- Header -->
   <header>
     <div class="nav-container">
       <a href="#" class="brand">
@@ -573,8 +407,9 @@
       </a>
       <ul class="nav-links">
         <li><a href="#rehber">Kurulum</a></li>
+        <li><a href="#turkce-yama">Türkçe Yama</a></li>
         <li><a href="#onizleme">Arayüz</a></li>
-        <li><a href="#changelog">Yama Notları</a></li>
+        <li><a href="#changelog">Güncellemeler</a></li>
         <li><a href="#gereksinimler">Gereksinimler</a></li>
         <li><a href="#faq">S.S.S.</a></li>
       </ul>
@@ -585,17 +420,59 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="version-wrapper">
       <div class="live-dot"></div>
       <span style="font-size:0.85rem; font-weight:700; color:#fff;">v1.0.0 Yayında</span>
     </div>
-    <h1>Oyunlar ve Tüm DLC'ler<br><span>Tek Tıkla Kütüphanende</span></h1>
-    <p>Steam istemcinizi algılayarak mağazadaki içerikleri ve fiziksel ek paketleri doğrudan hesabınızın kütüphanesine senkronize eder.</p>
+    <h1>Oyunlar, DLC'ler ve<br><span>Türkçe Yamalar</span></h1>
+    <p>Steam istemcinizi algılayarak mağazadaki içerikleri kütüphanenize ekleyin. Desteklenen oyunlarda Türkçe yamayı tek tıkla indirin.</p>
+    <div class="hero-badges">
+      <div class="hero-badge blue"><i class="fa-solid fa-gamepad"></i> Oyun + DLC Ekleme</div>
+      <div class="hero-badge"><i class="fa-solid fa-language"></i> Türkçe Yama Desteği</div>
+      <div class="hero-badge green"><i class="fa-brands fa-discord"></i> Discord ile Giriş</div>
+    </div>
   </section>
 
-  <!-- Kurulum Adımları -->
+  <!-- Türkçe Yama Öne Çıkan Bölüm -->
+  <section id="turkce-yama" class="container" style="padding-top:2rem; padding-bottom:2rem;">
+    <div class="feature-highlight">
+      <div>
+        <div class="feature-highlight-badge"><i class="fa-solid fa-sparkles"></i> Yeni Özellik</div>
+        <h3>Kütüphaneden Tek Tıkla Türkçe Yama</h3>
+        <p>Oyunu kütüphanene ekledikten sonra <strong>Türkçe Yama Yap</strong> butonuna basman yeterli. Desteklenen oyunlarda yama linki otomatik açılır, tarayıcıdan indirmeye başlarsın.</p>
+        <div class="feature-points">
+          <div class="feature-point">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Yama varsa buton aktif — tıkla, tarayıcıda indirme başlasın</span>
+          </div>
+          <div class="feature-point">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Yama yoksa “Bu oyun için Türkçe yama yok” bilgisini görürsün</span>
+          </div>
+          <div class="feature-point">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Katalog büyüdükçe daha fazla oyuna yama linki ekleniyor</span>
+          </div>
+        </div>
+      </div>
+      <div class="feature-visual">
+        <div style="font-size:0.75rem; color:var(--text-muted); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:4px;">Kütüphane önizlemesi</div>
+        <div class="mock-card">
+          <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/945360/header.jpg" alt="">
+          <div class="mock-card-info">
+            <strong>Among Us</strong>
+            <span>AppID: 945360</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <button class="mock-btn" type="button"><i class="fa-solid fa-language"></i> Türkçe Yama Yap</button>
+          <button class="mock-btn mock-btn-remove" type="button"><i class="fa-solid fa-trash-can"></i> Kaldır</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="rehber" class="container">
     <div class="section-title">
       <h2>3 Adımda Kolay Kurulum</h2>
@@ -623,13 +500,11 @@
     </div>
   </section>
 
-  <!-- 3D Carousel Arayüz Slaytı -->
   <section id="onizleme" class="container">
     <div class="section-title">
       <h2>Uygulama İçi Arayüz</h2>
       <p>Modern, şık ve performansı etkilemeyen dinamik kontrol paneli</p>
     </div>
-
     <div class="slider-wrapper">
       <div class="carousel-container" id="carousel">
         <div class="slide active">
@@ -642,7 +517,6 @@
           <img src="https://media.discordapp.net/attachments/1537777974311391284/1541065289574252624/Screenshot_3.png?ex=6a8c3c64&is=6a8aeae4&hm=d9bf4740eacb107ba3c6f542f33d7bffc6d16e5d45dd092e41c587c0c274fd7a&=&format=webp&quality=lossless&width=1280&height=678" alt="Syncra Tools Profil">
         </div>
       </div>
-
       <div class="slider-controls">
         <button class="slider-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
         <div class="dots-container" id="dotsContainer">
@@ -655,48 +529,57 @@
     </div>
   </section>
 
-  <!-- Changelog Section -->
+  <!-- Güncellemeler - düzgünleştirilmiş -->
   <section id="changelog" class="container">
     <div class="section-title">
-      <h2>Sürüm Değişim Günlüğü</h2>
-      <p>Son güncellemeler ve yapılan sistem geliştirmeleri</p>
+      <h2>Güncellemeler</h2>
+      <p>Son sürüm notları ve sistem geliştirmeleri</p>
     </div>
-    <div class="changelog-box">
-      <div class="changelog-header">
-        <div>
-          <h3 style="color:#fff; font-size:1.2rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-            <i class="fa-solid fa-bolt" style="color:var(--accent);"></i> SYNCRA v1.0.0 — Güncelleme
-          </h3>
-          <span style="font-size:0.85rem; color:var(--text-main); margin-top:4px; display:inline-block;">Giriş sistemi ve oturum yönetimi geliştirmeleri</span>
+    <div class="changelog-stack">
+
+      <div class="changelog-card">
+        <div class="changelog-card-header">
+          <h3><i class="fa-solid fa-language"></i> SYNCRA v1.0.0</h3>
+          <div class="changelog-meta">
+            <span class="tag tag-new">Türkçe Yama</span>
+            <span class="tag tag-stable">Stable</span>
+            <span class="changelog-date">Ağustos 2026</span>
+          </div>
         </div>
-        <span style="background:rgba(102,192,244,0.15); color:var(--accent); padding:4px 12px; border-radius:20px; font-weight:700; font-size:0.8rem;">STABLE</span>
+        <div class="changelog-body">
+          <div class="changelog-group">
+            <div class="changelog-group-title purple"><i class="fa-solid fa-language"></i> Türkçe Yama Desteği</div>
+            <ul class="changelog-items">
+              <li>Kütüphanedeki oyun kartlarına <strong>Türkçe Yama Yap</strong> butonu eklendi.</li>
+              <li>Yama linki tanımlı oyunlarda tıklayınca indirme tarayıcıda başlar.</li>
+              <li>Yama olmayan oyunlarda “Bu oyun için Türkçe yama yok” bilgisini gösterir.</li>
+              <li>Yama linkleri katalog üzerinden yönetilir; yeni oyunlar eklendikçe destek artar.</li>
+            </ul>
+          </div>
+          <div class="changelog-group">
+            <div class="changelog-group-title blue"><i class="fa-solid fa-key"></i> Oturum Yönetimi</div>
+            <ul class="changelog-items">
+              <li>Discord ile bir kez giriş sonrası <strong>24 saat</strong> oturum hatırlama.</li>
+              <li>Programı kapatıp açsanız bile süre dolmadan tekrar giriş istemez.</li>
+              <li>Süre dolunca net “Oturum süresi doldu” uyarısı çıkar.</li>
+              <li>Manuel çıkış veya hesap engeli durumunda oturum otomatik kapanır.</li>
+            </ul>
+          </div>
+          <div class="changelog-group">
+            <div class="changelog-group-title green"><i class="fa-solid fa-wrench"></i> İyileştirmeler</div>
+            <ul class="changelog-items">
+              <li>Giriş ekranı daha stabil çalışıyor.</li>
+              <li>Gereksiz tekrar giriş isteme sorunu giderildi.</li>
+              <li>Steam durum göstergesi başlıktan ayrılarak daha okunaklı hale getirildi.</li>
+              <li>Genel giriş-çıkış akışı sadeleştirildi.</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="changelog-section-title">🔐 Oturum Hatırlama</div>
-      <ul class="changelog-list">
-        <li><i class="fa-solid fa-circle-small"></i> Discord ile bir kez giriş yaptıktan sonra <strong>24 saat boyunca</strong> tekrar giriş istemeyecek.</li>
-        <li><i class="fa-solid fa-circle-small"></i> Programı kapatıp açsanız bile direkt içeri gireceksiniz.</li>
-        <li><i class="fa-solid fa-circle-small"></i> 24 saat dolunca ekranda “Oturum süresi doldu” uyarısı çıkacak.</li>
-        <li><i class="fa-solid fa-circle-small"></i> Uyarıya Tamam dedikten sonra tekrar Discord ile giriş yapmanız yeterli.</li>
-        <li><i class="fa-solid fa-circle-small"></i> Kendiniz çıkış yaparsanız veya hesabınız engellenirse oturum otomatik kapanır.</li>
-      </ul>
-
-      <div class="changelog-section-title">✨ Diğer İyileştirmeler</div>
-      <ul class="changelog-list">
-        <li><i class="fa-solid fa-circle-small"></i> Giriş ekranı daha stabil çalışıyor.</li>
-        <li><i class="fa-solid fa-circle-small"></i> Gereksiz yere tekrar tekrar giriş isteme sorunu giderildi.</li>
-        <li><i class="fa-solid fa-circle-small"></i> Süre dolunca çıkan uyarı daha net ve anlaşılır hale getirildi.</li>
-        <li><i class="fa-solid fa-circle-small"></i> Genel olarak giriş-çıkış akışı daha sorunsuz.</li>
-      </ul>
-
-      <div class="changelog-footer">
-        <span>Keyifli kullanımlar, görüşlerinizi bekliyoruz 🎮</span>
-        <strong style="color:var(--text-bright);">— Syncra Ekibi</strong>
-      </div>
     </div>
   </section>
 
-  <!-- Sistem Uyumluluğu -->
   <section id="gereksinimler" class="container">
     <div class="section-title">
       <h2>Sistem Uyumluluğu</h2>
@@ -726,93 +609,81 @@
     </div>
   </section>
 
-  <!-- Güncellenen S.S.S. -->
   <section id="faq" class="container">
     <div class="section-title">
       <h2>Sıkça Sorulan Sorular</h2>
       <p>Sistem operasyonları ve merak edilen teknik detaylar</p>
     </div>
-
     <div class="faq-container">
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>1. DLC sayısı neden eksik / farklı görünüyor?</span>
+          <span>1. Türkçe yama nasıl indirilir?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-content">
+          Oyunu kütüphaneye ekledikten sonra Kütüphane sekmesine gidin. Oyun kartındaki <strong>Türkçe Yama Yap</strong> butonuna tıklayın. Desteklenen oyunlarda indirme linki tarayıcıda açılır. Yama yoksa bilgilendirme mesajı görürsünüz.
+        </div>
+      </div>
+      <div class="faq-box">
+        <div class="faq-trigger">
+          <span>2. DLC sayısı neden eksik / farklı görünüyor?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
           Steam mağazasında gördüğünüz bazı DLC’ler (küçük boya paketleri, kabin aksesuarları, skin’ler vb.) ayrı indirme dosyası gerektirmez. Bunlar oyunun veya ana DLC paketlerinin içine gömülüdür.<br><br>
-          Bizim sistem sadece indirilmesi gereken fiziksel DLC paketlerini (haritalar, büyük araçlar vb.) tespit edip aktif eder. Sayı farklı görünse de eksik bir şey yok — Steam’in dosya yapısından kaynaklı normal bir durumdur. Oyun içinde tüm içeriklere erişebilirsiniz.<br><br>
-          <strong>Örnek:</strong> ETS2’de 111 DLC görünüyor olabilir ama sistem 98 tane indirir. Olması gereken budur, diğerleri zaten bu 98’in içinde gömülüdür.
+          Bizim sistem sadece indirilmesi gereken fiziksel DLC paketlerini tespit edip aktif eder. Sayı farklı görünse de eksik bir şey yoktur.
         </div>
       </div>
-
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>2. Neden en başta restart gerekiyor? Neden restart’tan sonra oyunu indiriyor?</span>
+          <span>3. Neden en başta restart gerekiyor?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
-          İlk kez kütüphaneye eklediğinizde Steam’e düzgün entegre olabilmesi için bir kez yeniden başlatma gerekir. Bu sadece <strong>ilk eklemede</strong> olur.<br><br>
-          Restart attıktan sonra sistem kurulmuş olur ve sonraki oyunlar restart istemeden eklenebilir. Oyunu ekledikten sonra Steam “hazır / başlatılmaya hazır” der ama dosyaları bulamayınca otomatik indirmeye çalışır. Restart sonrası oyuna sağ tık → Kaldır derseniz bu da gider. Sonrasında rahat şekilde oyun ekleyebilirsiniz.
+          İlk kez kütüphaneye eklediğinizde Steam’e düzgün entegre olabilmesi için bir kez yeniden başlatma gerekir. Bu sadece <strong>ilk eklemede</strong> olur. Sonraki oyunlar restart istemeden eklenebilir.
         </div>
       </div>
-
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>3. Steam hesabım ceza (BAN / VAC) alır mı?</span>
+          <span>4. Steam hesabım ceza (BAN / VAC) alır mı?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
-          Syncra Tools, oyun kodlarına veya hile koruma sistemlerine (VAC, Easy Anti-Cheat vb.) müdahale etmez. İşlemler tamamen Steam istemcisinin yerel yapılandırma katmanında gerçekleşir. Ancak yine de resmi olmayan kütüphane araçlarını kullanırken sorumluluk kullanıcıya aittir.
+          Syncra Tools, oyun kodlarına veya hile koruma sistemlerine (VAC, Easy Anti-Cheat vb.) müdahale etmez. İşlemler tamamen Steam istemcisinin yerel yapılandırma katmanında gerçekleşir. Resmi olmayan araçları kullanırken sorumluluk kullanıcıya aittir.
         </div>
       </div>
-
-      <div class="faq-box">
-        <div class="faq-trigger">
-          <span>4. Oyun indirmesi takılırsa veya başlatılamazsa ne yapmalıyım?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </div>
-        <div class="faq-content">
-          Steam istemcisini tamamen kapatıp (Görev Yöneticisi'nden kontrol ederek) Syncra Tools'u yönetici olarak tekrar çalıştırın. Oyun dosyalarının bütünlüğünü doğruladığınızda Steam eksik verileri CDN sunucularından tekrar çekecektir.
-        </div>
-      </div>
-
       <div class="faq-box">
         <div class="faq-trigger">
           <span>5. Neden ücretsiz?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
-          Piyasadaki birçok tool virüs barındırıyor. Herkese güvenli ve temiz bir deneyim sunmak için bu programı çıkardım. Lua dosyalarını kendim oluşturuyorum, dışarıdan almıyorum. Bu sayede risk bulunmuyor.
+          Piyasadaki birçok tool virüs barındırıyor. Herkese güvenli ve temiz bir deneyim sunmak için bu programı çıkardım. Lua dosyalarını kendim oluşturuyorum; bu sayede risk düşük tutuluyor.
         </div>
       </div>
-
       <div class="faq-box">
         <div class="faq-trigger">
           <span>6. Online Fix ve Bypass hk.</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
-          Şuanlık bu ikisinin desteği olmayacak. Bypass güvenilir bir kaynak bulana kadar eklenmeyecek. Online Fix'in gelmesi mümkün ama yakın süreçte düşünmüyoruz.
+          Şu anlık bu ikisinin desteği yok. Bypass güvenilir bir kaynak bulana kadar eklenmeyecek. Online Fix yakın süreçte planlanmıyor.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Syncra Software. Tüm hakları saklıdır.</p>
   </footer>
 
   <script>
-    // FAQ Accordion
     document.querySelectorAll('.faq-trigger').forEach(trigger => {
       trigger.addEventListener('click', () => {
         trigger.parentElement.classList.toggle('active');
       });
     });
 
-    // 3D Carousel Slider Logic
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
     let currentIndex = 0;
@@ -821,66 +692,29 @@
     function updateSlider(index) {
       slides.forEach((slide, i) => {
         slide.className = 'slide';
-        if (i === index) {
-          slide.classList.add('active');
-        } else if (i === (index - 1 + slides.length) % slides.length) {
-          slide.classList.add('prev');
-        } else if (i === (index + 1) % slides.length) {
-          slide.classList.add('next');
-        }
+        if (i === index) slide.classList.add('active');
+        else if (i === (index - 1 + slides.length) % slides.length) slide.classList.add('prev');
+        else if (i === (index + 1) % slides.length) slide.classList.add('next');
       });
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
       currentIndex = index;
     }
+    function nextSlide() { updateSlider((currentIndex + 1) % slides.length); }
+    function prevSlide() { updateSlider((currentIndex - 1 + slides.length) % slides.length); }
 
-    function nextSlide() {
-      const nextIndex = (currentIndex + 1) % slides.length;
-      updateSlider(nextIndex);
-    }
-
-    function prevSlide() {
-      const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-      updateSlider(prevIndex);
-    }
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      nextSlide();
-      resetAutoSlide();
-    });
-
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      prevSlide();
-      resetAutoSlide();
-    });
-
+    document.getElementById('nextBtn').addEventListener('click', () => { nextSlide(); resetAutoSlide(); });
+    document.getElementById('prevBtn').addEventListener('click', () => { prevSlide(); resetAutoSlide(); });
     dots.forEach(dot => {
       dot.addEventListener('click', (e) => {
-        const index = parseInt(e.target.dataset.index);
-        updateSlider(index);
+        updateSlider(parseInt(e.target.dataset.index));
         resetAutoSlide();
       });
     });
-
     slides.forEach((slide, i) => {
-      slide.addEventListener('click', () => {
-        updateSlider(i);
-        resetAutoSlide();
-      });
+      slide.addEventListener('click', () => { updateSlider(i); resetAutoSlide(); });
     });
-
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 4500);
-    }
-
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-
+    function startAutoSlide() { autoSlideInterval = setInterval(nextSlide, 4500); }
+    function resetAutoSlide() { clearInterval(autoSlideInterval); startAutoSlide(); }
     startAutoSlide();
   </script>
 </body>
