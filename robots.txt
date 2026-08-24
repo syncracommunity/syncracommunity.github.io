@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://syncracommunity.github.io/sitemap.xml
