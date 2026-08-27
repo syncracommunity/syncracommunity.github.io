@@ -9,11 +9,9 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://syncracommunity.github.io/">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Syncra Tools">
   <meta property="og:description" content="Oyunlar, DLC'ler ve Türkçe yamalar tek tıkla kütüphanende!">
   <meta property="og:type" content="website">
@@ -240,6 +238,24 @@
       background: rgba(239, 68, 68, 0.15); color: #f87171;
       border: 1px solid rgba(239, 68, 68, 0.3);
     }
+    .features-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+    .mini-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+    .mini-card i {
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+    .mini-card h4 { color: var(--text-bright); font-size: 1rem; margin-bottom: 0.4rem; }
+    .mini-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
     .steps-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
     }
@@ -385,7 +401,7 @@
 </head>
 <body>
   <div class="announce-banner" id="banner">
-    <span>YENİ</span> Türkçe yama desteği eklendi — kütüphaneden tek tıkla indir!
+    <span>YENİ</span> Syncra Tools 1.0.1 Güncellemesi İle Beraber Aktif!
     <i class="fa-solid fa-xmark banner-close" onclick="document.getElementById('banner').style.display='none'"></i>
   </div>
 
@@ -398,6 +414,7 @@
       <ul class="nav-links">
         <li><a href="#rehber">Kurulum</a></li>
         <li><a href="#turkce-yama">Türkçe Yama</a></li>
+        <li><a href="#ozellikler">Özellikler</a></li>
         <li><a href="#onizleme">Arayüz</a></li>
         <li><a href="#changelog">Güncellemeler</a></li>
         <li><a href="#gereksinimler">Gereksinimler</a></li>
@@ -405,7 +422,7 @@
       </ul>
       <div class="nav-actions">
         <a href="https://discord.gg/4BQDKKQUHp" target="_blank" class="btn-action btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
-        <a href="https://www.upload.ee/files/19694623/Syncra_Tools_Setup_1.0.0.exe.html" class="btn-action btn-download"><i class="fa-solid fa-download"></i> İndir</a>
+        <a href="https://www.upload.ee/files/19697726/Syncra_Tools_Setup_1.0.1.exe.html" class="btn-action btn-download"><i class="fa-solid fa-download"></i> İndir</a>
       </div>
     </div>
   </header>
@@ -413,7 +430,7 @@
   <section class="hero">
     <div class="version-wrapper">
       <div class="live-dot"></div>
-      <span style="font-size:0.85rem; font-weight:700; color:#fff;">v1.0.0 Yayında</span>
+      <span style="font-size:0.85rem; font-weight:700; color:#fff;">v1.0.1 Yayında</span>
     </div>
     <h1>Oyunlar, DLC'ler ve<br><span>Türkçe Yamalar</span></h1>
     <p>Steam istemcinizi algılayarak mağazadaki içerikleri kütüphanenize ekleyin. Desteklenen oyunlarda Türkçe yamayı tek tıkla indirin.</p>
@@ -427,21 +444,21 @@
   <section id="turkce-yama" class="container" style="padding-top:2rem; padding-bottom:2rem;">
     <div class="feature-highlight">
       <div>
-        <div class="feature-highlight-badge"><i class="fa-solid fa-sparkles"></i> Yeni Özellik</div>
+        <div class="feature-highlight-badge"><i class="fa-solid fa-sparkles"></i> Öne Çıkan</div>
         <h3>Kütüphaneden Tek Tıkla Türkçe Yama</h3>
         <p>Oyunu kütüphanene ekledikten sonra <strong>Türkçe Yama Yap</strong> butonuna basman yeterli. Desteklenen oyunlarda yama linki otomatik açılır, tarayıcıdan indirmeye başlarsın.</p>
         <div class="feature-points">
           <div class="feature-point">
             <i class="fa-solid fa-circle-check"></i>
-            <span>Yama varsa buton aktif — tıkla, tarayıcıda indirme başlasın</span>
+            <span>Katalogda <strong>TR Yama</strong> rozeti ve “Sadece TR Yama” filtresi</span>
           </div>
           <div class="feature-point">
             <i class="fa-solid fa-circle-check"></i>
-            <span>Yama yoksa “Bu oyun için Türkçe yama yok” bilgisini görürsün</span>
+            <span>Detay sayfasından da yama indirme</span>
           </div>
           <div class="feature-point">
             <i class="fa-solid fa-circle-check"></i>
-            <span>Katalog büyüdükçe daha fazla oyuna yama linki ekleniyor</span>
+            <span>Yama yoksa “Bu oyun için Türkçe yama yok” bilgisi</span>
           </div>
         </div>
       </div>
@@ -462,6 +479,45 @@
     </div>
   </section>
 
+  <section id="ozellikler" class="container" style="padding-top:1rem;">
+    <div class="section-title">
+      <h2>Öne Çıkan Özellikler</h2>
+      <p>Güncel Syncra Tools ile gelen pratik araçlar</p>
+    </div>
+    <div class="features-mini">
+      <div class="mini-card">
+        <i class="fa-solid fa-language"></i>
+        <h4>TR Yama Rozeti & Filtre</h4>
+        <p>Katalogda yama destekli oyunları anında gör, sadece yamalıları filtrele.</p>
+      </div>
+      <div class="mini-card">
+        <i class="fa-solid fa-trash-can"></i>
+        <h4>Toplu Kaldırma</h4>
+        <p>Kütüphanede birden fazla oyunu seçip tek seferde kaldır.</p>
+      </div>
+      <div class="mini-card">
+        <i class="fa-brands fa-steam"></i>
+        <h4>Steam Yeniden Başlat</h4>
+        <p>Ayarlardan Steam’i tek tıkla kapatıp yeniden başlat.</p>
+      </div>
+      <div class="mini-card">
+        <i class="fa-solid fa-wifi"></i>
+        <h4>Çevrimdışı Katalog</h4>
+        <p>İnternet yokken son indirdiğin katalog önbellekten açılır.</p>
+      </div>
+      <div class="mini-card">
+        <i class="fa-solid fa-bell"></i>
+        <h4>Yama Bildirimleri</h4>
+        <p>Kataloğa yeni Türkçe yama eklenince uygulama içi bildirim alırsın.</p>
+      </div>
+      <div class="mini-card">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <h4>Son Eklenenler</h4>
+        <p>Mağaza sayfasında yeni eklenen oyunları hızlıca gör.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="rehber" class="container">
     <div class="section-title">
       <h2>3 Adımda Kolay Kurulum</h2>
@@ -472,7 +528,7 @@
         <span class="step-num">01</span>
         <div class="step-icon"><i class="fa-solid fa-download"></i></div>
         <h3>1. Kurulum Dosyasını İndir</h3>
-        <p>Arayüzdeki İndir butonuna tıklayarak orijinal Setup dosyasını edinin ve kurulumu tamamlayın.</p>
+        <p>Bu sitedeki <strong>İndir</strong> butonuna tıklayarak Setup dosyasını edinin ve kurulumu tamamlayın.</p>
       </div>
       <div class="step-card">
         <span class="step-num">02</span>
@@ -526,39 +582,39 @@
     <div class="changelog-stack">
       <div class="changelog-card">
         <div class="changelog-card-header">
-          <h3><i class="fa-solid fa-language"></i> SYNCRA v1.0.0</h3>
+          <h3><i class="fa-solid fa-bolt"></i> SYNCRA v1.0.0</h3>
           <div class="changelog-meta">
-            <span class="tag tag-new">Türkçe Yama</span>
+            <span class="tag tag-new">Yeni Özellikler</span>
             <span class="tag tag-stable">Stable</span>
             <span class="changelog-date">Ağustos 2026</span>
           </div>
         </div>
         <div class="changelog-body">
           <div class="changelog-group">
-            <div class="changelog-group-title purple"><i class="fa-solid fa-language"></i> Türkçe Yama Desteği</div>
+            <div class="changelog-group-title purple"><i class="fa-solid fa-language"></i> Türkçe Yama</div>
             <ul class="changelog-items">
-              <li>Kütüphanedeki oyun kartlarına <strong>Türkçe Yama Yap</strong> butonu eklendi.</li>
-              <li>Yama linki tanımlı oyunlarda tıklayınca indirme tarayıcıda başlar.</li>
-              <li>Yama olmayan oyunlarda “Bu oyun için Türkçe yama yok” bilgisini gösterir.</li>
-              <li>Yama linkleri katalog üzerinden yönetilir; yeni oyunlar eklendikçe destek artar.</li>
+              <li>Kütüphane ve detay sayfasında <strong>Türkçe Yama Yap</strong> butonu.</li>
+              <li>Katalogda <strong>TR Yama</strong> rozeti ve “Sadece TR Yama” filtresi.</li>
+              <li>Kataloğa yeni yama eklenince uygulama içi bildirim.</li>
+              <li>Yama linki tarayıcıda açılır; yoksa bilgilendirme mesajı gösterilir.</li>
             </ul>
           </div>
           <div class="changelog-group">
-            <div class="changelog-group-title blue"><i class="fa-solid fa-key"></i> Oturum Yönetimi</div>
+            <div class="changelog-group-title blue"><i class="fa-solid fa-layer-group"></i> Kütüphane & Katalog</div>
             <ul class="changelog-items">
-              <li>Discord ile bir kez giriş sonrası <strong>24 saat</strong> oturum hatırlama.</li>
-              <li>Programı kapatıp açsanız bile süre dolmadan tekrar giriş istemez.</li>
-              <li>Süre dolunca net “Oturum süresi doldu” uyarısı çıkar.</li>
-              <li>Manuel çıkış veya hesap engeli durumunda oturum otomatik kapanır.</li>
+              <li>Kütüphanede çoklu seçim ile <strong>toplu kaldırma</strong>.</li>
+              <li>Kütüphane araması: oyun adı + AppID.</li>
+              <li>Mağazada <strong>Son Eklenenler</strong> şeridi.</li>
+              <li>Çevrimdışı katalog önbelleği (internet yokken son katalog).</li>
             </ul>
           </div>
           <div class="changelog-group">
-            <div class="changelog-group-title green"><i class="fa-solid fa-wrench"></i> İyileştirmeler</div>
+            <div class="changelog-group-title green"><i class="fa-solid fa-wrench"></i> Sistem</div>
             <ul class="changelog-items">
-              <li>Giriş ekranı daha stabil çalışıyor.</li>
-              <li>Gereksiz tekrar giriş isteme sorunu giderildi.</li>
-              <li>Steam durum göstergesi başlıktan ayrılarak daha okunaklı hale getirildi.</li>
-              <li>Genel giriş-çıkış akışı sadeleştirildi.</li>
+              <li>Ayarlardan <strong>Steam’i Yeniden Başlat</strong>.</li>
+              <li>Discord ile 24 saat oturum hatırlama.</li>
+              <li>Zorunlu güncelleme indirme linki artık resmi siteye yönlendirir.</li>
+              <li>Giriş akışı ve bildirimler sadeleştirildi.</li>
             </ul>
           </div>
         </div>
@@ -603,16 +659,25 @@
     <div class="faq-container">
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>1. Türkçe yama nasıl indirilir?</span>
+          <span>1. Güncellemeyi nereden indiririm?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
-          Oyunu kütüphaneye ekledikten sonra Kütüphane sekmesine gidin. Oyun kartındaki <strong>Türkçe Yama Yap</strong> butonuna tıklayın. Desteklenen oyunlarda indirme linki tarayıcıda açılır. Yama yoksa bilgilendirme mesajı görürsünüz.
+          Yeni sürüm çıktığında uygulama seni bu siteye yönlendirir. Sağ üstteki <strong>İndir</strong> butonundan güncel Setup dosyasını alabilirsin. Discord zorunlu değildir.
         </div>
       </div>
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>2. DLC sayısı neden eksik / farklı görünüyor?</span>
+          <span>2. Türkçe yama nasıl indirilir?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-content">
+          Oyunu kütüphaneye ekledikten sonra Kütüphane sekmesine gidin. Oyun kartındaki <strong>Türkçe Yama Yap</strong> butonuna tıklayın. Desteklenen oyunlarda indirme linki tarayıcıda açılır. Yama yoksa bilgilendirme mesajı görürsünüz. Katalogda “Sadece TR Yama” filtresiyle desteklenenleri de ayıklayabilirsiniz.
+        </div>
+      </div>
+      <div class="faq-box">
+        <div class="faq-trigger">
+          <span>3. DLC sayısı neden eksik / farklı görünüyor?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
@@ -621,16 +686,16 @@
       </div>
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>3. Neden en başta restart gerekiyor?</span>
+          <span>4. Neden en başta restart gerekiyor?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
-          İlk kez kütüphaneye eklediğinizde Steam’e düzgün entegre olabilmesi için bir kez yeniden başlatma gerekir. Bu sadece <strong>ilk eklemede</strong> olur. Sonraki oyunlar restart istemeden eklenebilir.
+          İlk kez kütüphaneye eklediğinizde Steam’e düzgün entegre olabilmesi için bir kez yeniden başlatma gerekir. Bu sadece <strong>ilk eklemede</strong> olur. Sonraki oyunlar restart istemeden eklenebilir. Ayarlardan “Steam’i Yeniden Başlat” butonunu da kullanabilirsiniz.
         </div>
       </div>
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>4. Steam hesabım ceza (BAN / VAC) alır mı?</span>
+          <span>5. Steam hesabım ceza (BAN / VAC) alır mı?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
@@ -639,7 +704,7 @@
       </div>
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>5. Neden ücretsiz?</span>
+          <span>6. Neden ücretsiz?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
@@ -648,7 +713,7 @@
       </div>
       <div class="faq-box">
         <div class="faq-trigger">
-          <span>6. Online Fix ve Bypass hk.</span>
+          <span>7. Online Fix ve Bypass hk.</span>
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-content">
